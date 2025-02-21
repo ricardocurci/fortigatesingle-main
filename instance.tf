@@ -7,6 +7,7 @@ resource "ibm_is_volume" "logDisk" {
   name    = "${var.cluster_name}-logdisk-${random_string.random_suffix.result}"
   profile = "10iops-tier"
   zone    = var.zone1
+  resource_group = var.resource_group_fortigate
 }
 
 resource "ibm_is_floating_ip" "publicip" {
